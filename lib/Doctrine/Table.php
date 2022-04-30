@@ -1363,6 +1363,7 @@ class Doctrine_Table extends Doctrine_Configurable implements Countable, Seriali
                 case 'array':
                 case 'object':
                 case 'blob':
+				case 'json':
                 case 'gzip':
                     //$length = 2147483647;
 
@@ -2384,6 +2385,18 @@ class Doctrine_Table extends Doctrine_Configurable implements Countable, Seriali
 
                     if ($value === false) {
                         throw new Doctrine_Table_Exception('Uncompressing of ' . $fieldName . ' failed.');
+                    }
+                    return $value;
+                break;
+				case 'json':
+					if(empty($value)) {
+						return $value;
+					}
+
+                    $value = json_decode($value);
+
+                    if ($value === false) {
+                        throw new Doctrine_Table_Exception('JSON conversion of ' . $fieldName . ' failed.');
                     }
                     return $value;
                 break;

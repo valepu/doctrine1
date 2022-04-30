@@ -835,6 +835,9 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
                     case 'enum':
                         $vars['_data'][$k] = $this->_table->enumIndex($k, $vars['_data'][$k]);
                         break;
+					case 'json':
+						$vars['_data'][$k] = json_encode($vars['_data'][$k]);
+						break;
                 }
             }
         }
@@ -884,6 +887,9 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
                 case 'enum':
                     $this->_data[$k] = $this->_table->enumValue($k, $this->_data[$k]);
                     break;
+				case 'json':
+					$this->_data[$k] = json_decode($this->_data[$k]);
+					break;
 
             }
         }
@@ -1830,6 +1836,9 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
                 case 'gzip':
                     $a[$field] = gzcompress($this->_data[$field],5);
                     break;
+				case 'json':
+					$a[$field] = json_encode($this->_data[$field]);
+					break;
                 case 'boolean':
                     $a[$field] = $this->getTable()->getConnection()->convertBooleans($this->_data[$field]);
                 break;
