@@ -179,6 +179,8 @@ class Doctrine_Validator extends Doctrine_Locator_Injectable
             case 'blob':
                 return is_string($var) || is_resource($var);
             case 'clob':
+			case 'json':
+				return is_string($var);
             case 'gzip':
                 return is_string($var);
             case 'array':

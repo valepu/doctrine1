@@ -221,6 +221,8 @@ class Doctrine_DataDict_Mysql extends Doctrine_DataDict
                     }
                 }
                 return 'INT';
+			case 'json':
+				return 'JSON';
             case 'boolean':
                 return 'TINYINT(1)';
             case 'date':

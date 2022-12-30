@@ -695,6 +695,7 @@ class Doctrine_Import_Builder extends Doctrine_Builder
                     "decimal"   => "float",
                     "blob"      => "object",
                     "gzip"      => "object",
+					"json"      => "object",
                     "bit"       => "binary",
                     "varbit"    => "binary",
                     "inet"      => "string",
@@ -711,6 +712,7 @@ class Doctrine_Import_Builder extends Doctrine_Builder
                     "date"  => "Date in ISO-8601 format (YYYY-MM-DD)",
                     "datetime"  => "Date and time in ISO-8601 format (YYYY-MM-DD HH:MI)",
                     "timestamp" =>  "Timestamp in ISO-8601 format (YYYY-MM-DD HH:MI:SS)",
+					"json"      => "JSON data",
                     "gzip"      => "A gzipped object",
                     "object"    => "A doctrine serialized object",
                     "enum"      => "Possible values (%s)"

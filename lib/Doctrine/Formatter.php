@@ -175,6 +175,8 @@ class Doctrine_Formatter extends Doctrine_Connection_Module
         case 'array':
         case 'object':
             $input = serialize($input);
+		case 'json':
+			$input = json_encode($input);
         case 'date':
         case 'time':
         case 'timestamp':
