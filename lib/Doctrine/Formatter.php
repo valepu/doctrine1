@@ -175,8 +175,6 @@ class Doctrine_Formatter extends Doctrine_Connection_Module
         case 'array':
         case 'object':
             $input = serialize($input);
-		case 'json':
-			$input = json_encode($input);
         case 'date':
         case 'time':
         case 'timestamp':
@@ -272,6 +270,6 @@ class Doctrine_Formatter extends Doctrine_Connection_Module
     public function getTableName($table)
     {
         $format = $this->conn->getAttribute(Doctrine_Core::ATTR_TBLNAME_FORMAT);
-        return sprintf($format, str_replace(sprintf($format, null), null, $table));
+        return sprintf($format, str_replace(sprintf($format, null), '', $table));
     }
 }

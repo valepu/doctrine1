@@ -83,7 +83,12 @@ class Doctrine_Connection_Mysql extends Doctrine_Connection_Common
                                             array('start' => '/*', 'end' => '*/', 'escape' => false),
                                             );
 
-        $this->properties['varchar_max_length'] = 65535;
+        $this->properties['varchar_max_length'] = 255;
+
+        // PHP8.1 require default to true to keep BC
+        // https://www.php.net/manual/en/migration81.incompatible.php#migration81.incompatible.pdo.mysql
+        // Can be overwritten by user later
+        $this->setAttribute(Doctrine_Core::ATTR_STRINGIFY_FETCHES, true);
 
         parent::__construct($manager, $adapter);
     }
