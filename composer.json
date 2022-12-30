@@ -1,5 +1,5 @@
 {
-    "name": "valepu/doctrine1",
+    "name": "friendsofsymfony1/doctrine1",
     "type": "library",
     "description": "PHP Database ORM for Symfony1. Do NOT use for new projects: please move to a newest Symfony release and Doctrine2",
     "keywords": ["orm", "database", "symfony1", "doctrine1"],
@@ -21,6 +21,7 @@
     ],
     "require": {
         "php": ">=5.3",
+        "ext-zlib": "*",
         "ext-mbstring": "*",
         "ext-pdo": "*"
     },

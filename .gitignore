@@ -1,2 +1,8 @@
 tests/DoctrineTest/doctrine_tests/*
 *TestCase.php
+/composer.lock
+/tests/tmp
+/tests/foo.sq3
+/vendor/
+/.buildpath
+/.project
