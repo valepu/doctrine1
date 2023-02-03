@@ -908,7 +908,7 @@ abstract class Doctrine_Record extends Doctrine_Record_Abstract implements Count
                     $this->_data[$k] = $this->_table->enumValue($k, $this->_data[$k]);
                     break;
 				case 'json':
-					$this->_data[$k] = json_decode($this->_data[$k]);
+					$this->_data[$k] = json_decode($this->_data[$k], true);
 					break;
 
             }

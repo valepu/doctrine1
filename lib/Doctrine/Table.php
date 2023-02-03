@@ -2397,7 +2397,7 @@ class Doctrine_Table extends Doctrine_Configurable implements Countable, Seriali
                         return $value;
                     }
                     
-                    $value = json_decode($value);
+                    $value = json_decode($value, true);
                     
                     if ($value === false) {
                         throw new Doctrine_Table_Exception('JSON conversion of ' . $fieldName . ' failed.');
